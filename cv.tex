@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Modern CV theme settings
+\moderncvcolor{blue}
+\moderncvstyle{classic}
+
+% Adjust page margins
+\usepackage[scale=0.82]{geometry}
+
+% Load font packages
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+
+% Personal data
+\name{Your}{Name}
+\title{Title}
+\phone[mobile]{+1234567890}
+\email{email@gmail.com}
+\social[github]{kreatoo}
+\social[linkedin]{test}
+
+% Ensure proper PDF output
+\pdfoutput=1
+\pdfinclusioncopyfonts=1
+
+\begin{document}
+
+\makecvtitle
+
+% About me section
+\section{Profile}
+This is the profile section.
+
+\section{Experience}
+\cventry{2025--Present}{Test Job}{Test Employer}{}{}{%
+\begin{itemize}
+\item This is an item.
+\end{itemize}}
+
+% Projects in chronological order (most recent first) with consistent date format
+\section{Projects}
+\cventry{2025-Present}{Test Project}{\href{https://github.com/test}{github.com/test}}{}{}{
+\textbf{Have done} stuff.
+
+% You can add additional sections, such as Certifications, Education, etc.
+
+\end{document}

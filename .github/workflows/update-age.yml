@@ -1,0 +1,28 @@
+name: Update age
+on:
+  schedule:
+    - cron: "0 0 * * *" # Put your birthday here
+  
+  workflow_dispatch:
+
+jobs:
+  build:
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update age
+        run: |
+          AGE=$(grep -oE '\b[0-9]+-year-old\b' cv.tex | cut -d'-' -f1)
+          NEW_AGE=$((AGE + 1))
+          sed -i "s/$AGE-year-old/$NEW_AGE-year-old/" cv.tex
+
+      - uses: EndBug/add-and-commit@v9
+
+      - name: Run blank.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run .github/workflows/blank.yml
