@@ -20,3 +20,5 @@ You need to have Nix installed, please see [nix.dev](https://nix.dev) for that.
 If you don't have Nix installed you can also use GitHub Actions to build the PDF's as it creates a release for every commit.
 
 After that you can run `build.sh` and if you haven't made any mistakes you should be good to go!
+
+For automated age changing, you need to write the age on your CV as x-year old (for example, 19-year-old). Then, you can add your birthday as a cron at [.github/workflows/update-age.yml](./.github/workflows/update-age.yml) and that should do the trick!
